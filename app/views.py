@@ -8,9 +8,9 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from .serializers import (Commentserializers,Userserializers,LikeVideserializers,
-                          Courseserializers,Lessonserializers,Videoserializers,Emailserializers)
+                          Courseserializers,Lessonserializers,Emailserializers)
 from .permissions import UserPermission,CastomPermission
-from .models import Comment,Video,Course,Lesson,User,LikeVideo
+from .models import Comment,Course,Lesson,User,LikeVideo
 
 class UserView(ModelViewSet):
     queryset = User.objects.all()
@@ -28,14 +28,6 @@ class CommentView(ModelViewSet):
 class CourseView(ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = Courseserializers
-    permission_classes = [CastomPermission]
-    filter_backends = [filters.SearchFilter]
-    search_fields = ['name']
-
-
-class VideoView(ModelViewSet):
-    queryset = Video.objects.all()
-    serializer_class = Videoserializers
     permission_classes = [CastomPermission]
     filter_backends = [filters.SearchFilter]
     search_fields = ['name']

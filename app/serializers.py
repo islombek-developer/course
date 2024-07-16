@@ -1,15 +1,11 @@
 from rest_framework import serializers
-from .models import Comment,Course,Lesson,User,Video,LikeVideo
+from .models import Comment,Course,Lesson,User,LikeVideo
 
 class Userserializers(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
 
-class Videoserializers(serializers.ModelSerializer):
-    class Meta:
-        model = Video
-        fields = '__all__'
 
 class Commentserializers(serializers.ModelSerializer):
     class Meta:
