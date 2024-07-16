@@ -19,11 +19,12 @@ from django.urls import path,include
 from rest_framework import routers
 from drf_spectacular.views import (SpectacularAPIView, SpectacularRedocView,
                                    SpectacularSwaggerView)
-from app.views import UserView,CommentView,EmailView,LikesView,VideoView,LikecreateView
+from app.views import UserView,CommentView,EmailView,LikesView,VideoView,LikecreateView,LessonView,CourseView
 
 router = routers.SimpleRouter()
 router.register('user', UserView)
 router.register('video', VideoView)
+router.register('lesson', LessonView)
 router.register('comment', CommentView)
 
 

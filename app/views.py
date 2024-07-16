@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.core.mail import send_mail
 
-from rest_framework import generics,filters
+from rest_framework import generics, filters
 from rest_framework.views import APIView
 from rest_framework.request import Request
 from rest_framework.response import Response
@@ -81,8 +81,14 @@ class LikesView(APIView):
         return Response({'likes':likes,'dislikes': dislikes})
 
 
-    def delete(self, request, *args, **kwargs):
-        return self.destroy(request, *args, **kwargs)
+    # def delete(self, request, pk, *args, **kwargs):
+    #     try:
+    #         like = LikeVideo.objects.get(pk=pk)
+    #         like.delete()
+    #         return Response({"massage":"like ochirildi"})
+    #     except :
+    #         return Response({'massage': 'Like topilmadi'})
+
 
 class LikecreateView(APIView):
     def post(self, request):
